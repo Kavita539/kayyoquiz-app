@@ -9,8 +9,7 @@ return(
 <div className="grid-50-50">
     <div className="question-image">
         <img className="responsive-img rounded-top-corner-img"
-            src="/assets/nutrition.jpeg"
-            alt="image" />
+            src="/assets/nutrition.jpeg"/>
     </div>
     <div className="styled-text-container">
         <div className="question">
