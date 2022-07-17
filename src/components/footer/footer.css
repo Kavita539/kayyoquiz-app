@@ -1,4 +1,4 @@
-* footer */ .footer {
+.footer {
     background-color: var(--secondary-color);
     padding: var(--xl-space);
     display: flex;
