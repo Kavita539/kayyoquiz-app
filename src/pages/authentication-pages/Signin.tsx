@@ -43,8 +43,6 @@ return(
                 <div className="agreement-options">
                     <label className="form-label-agreement"><input type="checkbox" name="agreement" />
                         Remember me</label>
-                    <button className="btn link-btn"><a href="#">Forgot
-                            Password?</a></button>
                 </div>
 
                 <div className="authentication-btn-cta">
