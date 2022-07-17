@@ -29,3 +29,9 @@ export type {
     UserDetailTypes
 }
 from "./UserInputs.types";
+export type {
+    AuthAction,
+    AuthContextType,
+    authState
+}
+from "./AuthContext.types";
