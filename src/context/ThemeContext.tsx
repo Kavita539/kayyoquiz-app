@@ -5,10 +5,10 @@ import {
 from "react";
 import {
     ReactChildren,
-    ThemeContextTypes
+    ThemeContextType
 } from "../types";
 
-const ThemeContext = createContext({}as ThemeContextTypes);
+const ThemeContext = createContext({}as ThemeContextType);
 
 const ThemeProvider = ({
     children
