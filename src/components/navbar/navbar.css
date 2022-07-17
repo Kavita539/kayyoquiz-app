@@ -1,0 +1,72 @@
+.navbar {
+    padding: 1rem;
+    height: 4.5rem;
+}
+
+.burger-menu-button {
+    display: none;
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    border: none;
+    width: 2rem;
+    background-color: var(--bg-color);
+}
+
+.right-navbar .navlist-link-item {
+    display: block;
+}
+
+.link-btn {
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.logout-btn {
+    border: 2px solid transparent;
+    background-color: var(--bg-color);
+}
+
+.anchor-tag-badge-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: var(--xs-space);
+    padding: var(--xs-space);
+}
+
+.theme-toggle-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.theme-toggle-btn.rotate {
+    transform: rotate(180deg);
+    transition: all 0.75s;
+}
+
+.theme-toggle-btn.rotate-light {
+    transform: rotate(360deg);
+    transition: all 0.75s;
+}
+
+/* media-queries */
+@media only screen and (max-width: 1024px) {
+    .burger-menu-button {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .right-navbar .navlist-link-item {
+        display: none;
+    }
+
+}

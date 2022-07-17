@@ -1,0 +1,43 @@
+import {
+useState,
+FormEvent
+} from "react";
+import { InputPropsTypes } from "../../types";
+import "./input.css"
+
+const PasswordInput = ({
+type,
+label,
+placeholder,
+required,
+defaultValue,
+showError,
+helperText,
+disabled,
+name,
+changeHandler
+}: InputPropsTypes) => {
+const [showPassword, setShowPassword] = useState(false);
+
+const togglePassword = (e: FormEvent) => {
+e.preventDefault();
+setShowPassword(prevState => !prevState);
+};
+
+return(
+<div className="input-grp"> <label className="form-label form-label-mandatory">{label}</label>
+    <input className="form-field" type={type || "text" } placeholder={placeholder} defaultValue={defaultValue}
+        required={required} disabled={disabled} onChange={changeHandler} name={name} />
+
+    <button onClick={togglePassword} className="password-toggle-button btn outline-btn">
+        {showPassword ? <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
+    </button>
+
+    <div className="text-danger">{showError && helperText}</div>
+</div>
+);
+};
+
+export {
+PasswordInput
+};
