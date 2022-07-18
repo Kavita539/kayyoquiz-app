@@ -1,0 +1,9 @@
+.hide-overlay {
+    display: none;
+}
+
+.overlay-container {
+    z-index: 1;
+    text-decoration: none;
+    color: var(--text-color);
+}

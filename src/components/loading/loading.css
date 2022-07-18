@@ -1,0 +1,8 @@
+.loader-container {
+    min-height: 8rem;
+    z-index: 3;
+}
+
+.loader {
+    width: 5rem;
+}

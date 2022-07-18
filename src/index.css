@@ -1,13 +1,57 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+:root {
+  --xs-space: 0.2rem;
+  --sm-space: 0.5rem;
+  --md-space: 1rem;
+  --lg-space: 1.5rem;
+  --xl-space: 2rem;
+  --xxl-space: 2.5rem;
+  --xxxl-space: 3rem;
+
+}
+
+.dark {
+  --bg-color: hsl(233, 13%, 14%);
+  --option-bg-color: #374e5d;
+  --secondary-color: hsl(233, 13%, 14%);
+  --text-color: #dee6ed;
+}
+
+.flex-total-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.grid-50-50 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--md-space);
+}
+
+.circle-bullet-list {
+  list-style-type: circle;
+  background-color: var(--bg-color);
+  padding: var(--padding-sm) 0;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 1000px){
+.grid-50-50 {
+    grid-template-columns: 1fr;
+}
 }

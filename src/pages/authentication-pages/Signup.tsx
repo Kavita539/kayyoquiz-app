@@ -1,8 +1,9 @@
-import { Input, PasswordInput } from "../../components";
+import { Input, PasswordInput, OverlayContainer, Loading } from "../../components";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { FormErrorsTypes, ReactChangeEvent, ReactMouseEvent } from "../../types";
+import { Link, useLocation } from "react-router-dom";
+import { FormErrorsTypes, ReactChangeEvent, ReactMouseEvent, LocationState } from "../../types";
 import { validFormChecker } from "../../utils";
+import { useAuth } from "../../hooks";
 import "./authentication.css";
 
 const Signup = () => {
@@ -17,6 +18,15 @@ confirmPassword: "",
 agreement: "not agree",
 });
 
+const {
+    signUp,
+    authState: { isLoading, error },
+  } = useAuth();
+
+  const location = useLocation();
+
+  const { from } = (location.state as LocationState) || { from: { pathname: "/" } };
+
 const changeHandler = (e: ReactChangeEvent) => {
 const { name, value } = e.target;
 setUserInput({ ...userInput, [name]: value });
@@ -25,6 +35,11 @@ setUserInput({ ...userInput, [name]: value });
 const formSubmitHandler = (e: ReactMouseEvent) => {
 e.preventDefault();
 setSubmitted(true);
+const { firstName, lastName, email, password } = userInput;
+    if (!(Object.values(formErrors).length > 0)) {
+      signUp({ firstName, lastName, email, password }, from);
+      setFormErrors({});
+}
 };
 
 useEffect(() => {
@@ -36,6 +51,11 @@ return(
         <div className="form-div">
             <form className="form-grp">
                 <h3 className="text-center text-lg">SIGN UP</h3>
+                {error && <p className="text-danger text-center">{error}</p>}
+
+                <OverlayContainer display={isLoading}>
+                    <Loading />
+                </OverlayContainer>
                 <Input type="text" defaultValue={userInput.firstName} name="firstName" label="Name"
                     helperText={formErrors.firstName} showError={submitted} required={true}
                     changeHandler={changeHandler} />
@@ -81,7 +101,7 @@ return(
 
                     <div className="redirect-link text-center">
                         <button className="btn link-btn">
-                            <Link to="/signin">Already have
+                            <Link to="/sign-in">Already have
                             an account?<i className="fas fa-chevron-right"></i></Link></button>
                     </div>
             </form>

@@ -2,12 +2,15 @@ import {
 Link
 } from "react-router-dom";
 import {
-useTheme
+useTheme, useAuth
 } from "../../hooks";
 import "./navbar.css";
 
 const Navbar = () => {
 const { currentTheme, handleCurrentTheme } = useTheme();
+const {
+    authState: { isAuthenticated },
+} = useAuth();
 return(
 <nav className="navbar">
     <div className="left-navbar">
@@ -25,8 +28,11 @@ return(
             </Link>
         </li>
         <li>
-            <Link to="/signin" className="anchor-tag-badge-container"> <i className="fas fa-user "></i> <span
-                className="text-xs">Login</span></Link>
+            <Link
+              to={`${isAuthenticated ? "/profile" : "/sign-in"}`}
+              className="anchor-tag-badge-container"
+              title={`${isAuthenticated ? "Profile" : "Login"}`}
+            ><i className="fas fa-user "></i></Link>
         </li>
         <li className="navlist-link-item">
             <button className={`theme-toggle-btn text-md ${ currentTheme==="light" ? "rotate-light" : "rotate" }`}

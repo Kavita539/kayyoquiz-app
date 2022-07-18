@@ -13,7 +13,8 @@ from "./QuizCard.types";
 export type {
     ReactChildren,
     ReactChangeEvent,
-    ReactMouseEvent
+    ReactMouseEvent,
+    LocationState
 }
 from "./Common.types";
 export type {
