@@ -32,8 +32,10 @@ return(
             </div>
         </div>
         {categoryStatus === "available" ? (<div className="card-call-to-action">
-            <Link to="explore-quiz" className="btn block-btn btn-primary">
-            Explore Quizzes
+        <Link
+            to={`explore-quiz/${categoryName.toLocaleLowerCase().replaceAll(" ", "-")}`}
+            className="btn btn-primary block-btn text-center"
+          >Explore Quizzes
             </Link>
         </div>) : null}
     </div>

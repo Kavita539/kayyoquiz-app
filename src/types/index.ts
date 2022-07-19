@@ -36,3 +36,7 @@ export type {
     authState
 }
 from "./AuthContext.types";
+export type {
+    ResultCardPropsTypes
+}
+from "./ResultCard.types";
