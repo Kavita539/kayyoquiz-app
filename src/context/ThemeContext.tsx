@@ -13,7 +13,7 @@ const ThemeContext = createContext({}as ThemeContextType);
 const ThemeProvider = ({
     children
 }: ReactChildren) => {
-    const [currentTheme, setCurrentTheme] = useState(JSON.parse(localStorage.getItem("kayy-O-quiz-theme") || "") || "dark");
+    const [currentTheme, setCurrentTheme] = useState(JSON.parse(localStorage.getItem("kayy-O-quiz-theme") || "{}") && "dark");
     return ( 
         <ThemeContext.Provider value = {
             {

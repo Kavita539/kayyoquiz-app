@@ -14,7 +14,7 @@ const useTheme = () => {
     const handleCurrentTheme = () => {
         setCurrentTheme(prevTheme => (prevTheme === "light" ? "dark" : "light"));
         localStorage.setItem(
-            "kayy-o-quiz-theme",
+            "kayy-O-quiz-theme",
             JSON.stringify(currentTheme !== "light" ? "light" : "dark")
         );
     };

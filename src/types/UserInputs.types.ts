@@ -6,8 +6,8 @@ type LogInUserInputTypes = {
 type UserDetailTypes = {
     firstName: string;
     lastName: string;
-    confirmPassword: string;
-    agreement: string;
+    confirmPassword?: string;
+    agreement?: string;
 };
 
 export type {

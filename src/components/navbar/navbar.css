@@ -17,6 +17,10 @@
     display: block;
 }
 
+.right-navbar a {
+    color: var(--text-color);
+}
+
 .link-btn {
     border: none;
     background-color: transparent;
