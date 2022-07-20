@@ -1,5 +1,5 @@
 import "./result.css";
-import { Footer, Navbar, Question, ResultCard } from "../../components";
+import { Footer, Navbar, ResultCard } from "../../components";
 import { useTheme, useGame } from "../../hooks";
 import { Link } from "react-router-dom";
 

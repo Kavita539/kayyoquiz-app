@@ -1,4 +1,3 @@
-import { ResultCardPropsTypes } from "../../types";
 import { useGame } from "../../hooks";
 
 const ResultCard = ({
