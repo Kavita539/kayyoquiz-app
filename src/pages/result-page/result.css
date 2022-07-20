@@ -22,6 +22,16 @@
     padding: var(--md-space);
 }
 
+.correct-answer {
+    background-color: var(--success-color);
+    color: var(--secondary-color);
+}
+
+.wrong-answer {
+    background-color: var(--danger-color);
+    color: var(--secondary-color);
+}
+
 .answers {
     display: flex;
     flex-direction: column;
