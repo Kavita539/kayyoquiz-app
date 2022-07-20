@@ -20,7 +20,7 @@ categoryImage
 return(
 <div className="card vertical-card card-shadow">
     <div className="card-image-container">
-        <img className="responsive-img rounded-top-corner-img" src={categoryImage} alt={categoryName} />
+        <img width="507" height="340" className="responsive-img rounded-top-corner-img" src={categoryImage} alt={categoryName} />
     </div>
     <div className="card-info-container">
         <div className="card-info">
@@ -32,8 +32,10 @@ return(
             </div>
         </div>
         {categoryStatus === "available" ? (<div className="card-call-to-action">
-            <Link to="explore-quiz" className="btn block-btn btn-primary">
-            Explore Quizzes
+        <Link
+            to={`explore-quiz/${categoryName.toLocaleLowerCase().replaceAll(" ", "-")}`}
+            className="btn btn-primary block-btn text-center"
+          >Explore Quizzes
             </Link>
         </div>) : null}
     </div>

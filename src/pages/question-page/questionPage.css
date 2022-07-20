@@ -23,12 +23,18 @@
     background-color: var(--option-bg-color);
     padding: var(--md-space);
     cursor: pointer;
+    border-radius: 5px ;
+    box-shadow: var(--card-shadow);
+}
+
+.selected-option {
+    background-color: var(--primary-color);
 }
 
 .option:hover {
-    background-color: var(--primary-color);
     color: var(--secondary-color);
     transition: 0.3s ease-in;
+    opacity: 0.8;
 }
 
 .correct-answer {

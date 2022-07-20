@@ -8,3 +8,13 @@ export {
     AuthProvider
 }
 from "./AuthContext";
+export {
+    GameContext,
+    GameProvider
+}
+from "./GameContext";
+export {
+    useQuiz,
+    QuizProvider
+}
+from "./QuizContext";

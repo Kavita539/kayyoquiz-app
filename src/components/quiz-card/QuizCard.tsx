@@ -1,24 +1,33 @@
 import {
-Link
+useNavigate
 } from "react-router-dom";
 import {
 QuizCardPropsTypes
 } from "../../types";
 import "../category-card/categoryCard.css";
+import { useGame } from "../../hooks";
 
 const QuizCard = ({
 quiz
 }: QuizCardPropsTypes) => {
-const {
-quizName,
-quizDescription,
-quizStatus,
-quizImage
-} = quiz;
+const { id, quizName, quizDescription, quizStatus, quizImage } = quiz;
+const { getQuestions } = useGame();
+const navigate = useNavigate();
+
+const playNowHandler = async () => {
+try {
+await getQuestions(id, quizName);
+navigate("/rules");
+} catch (err) {
+console.log(err);
+}
+};
+
 return(
 <div className="card vertical-card card-shadow">
     <div className="card-image-container">
-        <img className="responsive-img rounded-top-corner-img" src={quizImage} alt={quizName} />
+        <img width="300" height="168" className="responsive-img rounded-top-corner-img" src={quizImage}
+            alt={quizName} />
     </div>
     <div className="card-info-container">
         <div className="card-info">
@@ -30,9 +39,9 @@ return(
             </div>
         </div>
         {quizStatus === "available" ? (<div className="card-call-to-action">
-            <Link to="/rules" className="btn block-btn btn-primary">
+            <button onClick={playNowHandler} className="btn block-btn btn-primary">
             Play Now
-            </Link>
+            </button>
         </div>) : null}
     </div>
 </div>

@@ -24,7 +24,7 @@ return(
     </div>
     <ul className="right-navbar">
         <li>
-            <Link to="/" className="navlist-link-item"> <button className="btn link-btn">Home</button>
+            <Link to="/" className="navlist-link-item "> <button className="btn link-btn home-btn-link">Home</button>
             </Link>
         </li>
         <li>
@@ -34,7 +34,7 @@ return(
               title={`${isAuthenticated ? "Profile" : "Login"}`}
             ><i className="fas fa-user "></i></Link>
         </li>
-        <li className="navlist-link-item">
+        <li className="navlist-link-item theme-toggle-btn-link">
             <button className={`theme-toggle-btn text-md ${ currentTheme==="light" ? "rotate-light" : "rotate" }`}
                 onClick={handleCurrentTheme}>
                 <i className={`fas fa-${currentTheme==="light" ? "moon" : "sun" }`}></i>

@@ -1,0 +1,14 @@
+.prev-btn, .next-btn {
+    color: var(--text-color);
+    border: none;
+}
+
+.outline-btn{
+    text-align: center;
+}
+
+.outline-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+

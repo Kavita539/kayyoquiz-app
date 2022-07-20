@@ -1,4 +1,4 @@
-import { Input, PasswordInput, OverlayContainer, Loading } from "../../components";
+import { Input, PasswordInput, OverlayContainer, Loading, Footer, Navbar } from "../../components";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FormErrorsTypes, ReactChangeEvent, ReactMouseEvent, LocationState } from "../../types";
@@ -54,6 +54,8 @@ const loginWithGuest = (e: ReactMouseEvent) => {
 
 return(
 <>
+    <div className="form-wrapper">
+        <Navbar/>
     <div className="authentication-container">
         <div className="form-div">
             <form className="form-grp">
@@ -93,6 +95,8 @@ return(
             </form>
         </div>
 
+    </div>
+    <Footer/>
     </div>
 </>
 );

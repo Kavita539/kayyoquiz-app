@@ -1,5 +1,7 @@
 import {
-    db
+    db,
+    categoriesRef,
+    quizzesRef
 } from "../firbase-config";
 import {
     User
@@ -7,7 +9,10 @@ import {
 import {
     setDoc,
     getDoc,
-    doc
+    doc,
+    collection,
+    getDocs,
+    DocumentData
 } from "firebase/firestore";
 
 const createUserInfo = async (
@@ -64,7 +69,44 @@ const getUserInfo = async (uid: string) => {
     }
 };
 
+const getCategories = async () => {
+    let res = await getDocs(categoriesRef);
+    const categories: DocumentData | undefined = res.docs.map(ele => {
+        return {
+            ...ele.data(),
+            id: ele.id
+        };
+    });
+    return categories;
+};
+
+const getQuizzes = async () => {
+    let res = await getDocs(quizzesRef);
+    const quizzes: DocumentData | undefined = res.docs.map(ele => {
+        return {
+            ...ele.data(),
+            id: ele.id
+        };
+    });
+    return quizzes;
+};
+
+const getQuiz = async (quizId: string) => {
+    const quizRef = collection(db, `quizzes/${quizId}/questions`);
+    const res = await getDocs(quizRef);
+    const quiz: DocumentData | undefined = res.docs.map(ele => {
+        return {
+            ...ele.data(),
+            id: ele.id
+        };
+    });
+    return quiz;
+};
+
 export {
     createUserInfo,
-    getUserInfo
+    getUserInfo,
+    getCategories,
+    getQuizzes,
+    getQuiz
 };

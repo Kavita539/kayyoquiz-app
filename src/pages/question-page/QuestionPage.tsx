@@ -1,14 +1,18 @@
 import "./questionPage.css";
-import { useTheme } from "../../hooks";
+import { useTheme, useGame } from "../../hooks";
 import { Navbar, Footer, Question } from "../../components";
 
 const QuestionPage = () => {
 const { currentTheme } = useTheme();
+const {
+gameState: { quizTitle },
+} = useGame();
+
 return (
 <div className={`question-wrapper ${currentTheme==="dark" ? "dark" : "light" }`}>
     <Navbar />
     <main className="question-container text-center">
-        <h1>Know Your Question</h1>
+        <h1>{quizTitle}</h1>
         <Question />
     </main>
     <Footer />

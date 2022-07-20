@@ -34,3 +34,7 @@ export {
     OverlayContainer
 }
 from "./overlay-container/Overlaycontainer";
+export {
+    ResultCard
+}
+from "./result-card/ResultCard";

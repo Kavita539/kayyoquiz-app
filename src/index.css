@@ -17,7 +17,9 @@ body {
   --xl-space: 2rem;
   --xxl-space: 2.5rem;
   --xxxl-space: 3rem;
-
+  
+  --option-bg-color: #dce1e5;
+  --card-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .dark {
@@ -25,6 +27,7 @@ body {
   --option-bg-color: #374e5d;
   --secondary-color: hsl(233, 13%, 14%);
   --text-color: #dee6ed;
+  --card-shadow: 0 4px 8px 0 rgba(75,73,73,.2);
 }
 
 .flex-total-center {

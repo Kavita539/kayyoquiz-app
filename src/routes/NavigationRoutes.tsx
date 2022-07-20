@@ -11,7 +11,7 @@ const NavigationRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/" element={<PrivateRoutes />}>
-        <Route path="/explore-quiz" element={<ExploreQuiz />} />
+      <Route path="/explore-quiz/:quizId" element={<ExploreQuiz />} />
         <Route path="/rules" element={<Rules />} />
         <Route path="/result" element={<Result />} />
         <Route path="/question" element={<QuestionPage />} />
