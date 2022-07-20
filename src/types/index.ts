@@ -40,3 +40,15 @@ export type {
     ResultCardPropsTypes
 }
 from "./ResultCard.types";
+export type {
+    ActionType,
+    QuizContextType,
+    QuizState
+}
+from "./QuizContext.types";
+export type {
+    GameActionType,
+    GameContextType,
+    GameState
+}
+from "./GameContext.types";

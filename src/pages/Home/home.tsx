@@ -1,32 +1,20 @@
 import "./home.css";
-import { Footer, Navbar, CategoryCard } from "../../components";
-import { useTheme } from "../../hooks";
+import { Footer, Navbar, CategoryCard, Loading } from "../../components";
+import { useTheme, useGame } from "../../hooks";
+import { useQuiz } from "../../context";
+import { useEffect } from "react";
 
 const Home = () => {
 const { currentTheme } = useTheme();
-const categoryData = [
-{
-categoryName: "The Nutrition quiz",
-categoryDescription: "The ultimate space quiz for space geeks.",
-categoryImage:
-"/assets/nutition.jpeg",
-categoryStatus: "available",
-},
-{
-categoryName: "The Fitness Quiz",
-categoryDescription: "Coming Soon...",
-categoryImage:
-"/assets/nutition.jpeg",
-categoryStatus: "not-available",
-},
-{
-categoryName: "Yoga Quiz",
-categoryDescription: "Coming Soon...",
-categoryImage:
-"/assets/nutition.jpeg",
-categoryStatus: "not-available",
-},
-];
+const {
+quizState: { categoryData, isLoading },
+} = useQuiz();
+
+const { gameDispatch } = useGame();
+
+useEffect(() => {
+gameDispatch({ type: "RESET_QUIZ" });
+}, [gameDispatch]);
 
 return (
 <div className={`home-container ${currentTheme==="dark" ? "dark" : "light" }`}>
@@ -36,7 +24,7 @@ return (
         <section className="grid-50-50">
             <div className="banner-details text-center">
                 <h1 className="text-primary-color text-xl banner-heading">Kayy-O-Quiz</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, sunt!</p>
+                <p className="banner-text text-md">How big of a fan are you of series? Let's test!</p>
                 <div className="section-cta">
                     <a className="btn btn-primary" href="#categories">
                         Explore Categories
@@ -52,17 +40,18 @@ return (
         <section className="category-section">
             <h1 className="text-center text-xl">Categories</h1>
             <div className="category-grid" id="categories">
-                {
-                    categoryData.map((category, index) => {
-                        return <CategoryCard key = {
-                            index
-                        }
-                        category = {
-                            category
-                        }
-                        />; 
-                    })
-                }
+            {isLoading && <Loading />}
+            {categoryData?.map(
+              (category: {
+                id: string;
+                categoryDescription: string;
+                categoryImage: string;
+                categoryName: string;
+                categoryStatus: string;
+              }) => {
+                return <CategoryCard key={category.id} category={category} />;
+              }
+            )}
             </div>
         </section>
     </main>
@@ -73,5 +62,5 @@ return (
 };
 
 export {
-    Home
-}; 
+Home
+};

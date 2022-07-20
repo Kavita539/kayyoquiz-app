@@ -20,7 +20,7 @@ categoryImage
 return(
 <div className="card vertical-card card-shadow">
     <div className="card-image-container">
-        <img className="responsive-img rounded-top-corner-img" src={categoryImage} alt={categoryName} />
+        <img width="507" height="340" className="responsive-img rounded-top-corner-img" src={categoryImage} alt={categoryName} />
     </div>
     <div className="card-info-container">
         <div className="card-info">

@@ -2,14 +2,16 @@ import { ResultCardPropsTypes } from "../../types";
 import { useGame } from "../../hooks";
 
 const ResultCard = ({
-result
-}: ResultCardPropsTypes) => {
-const {
-question,
-options,
-questionIndex,
-correctOption
-} = result;
+    question,
+    options,
+    questionIndex,
+    correctOption,
+  }: {
+    question: string;
+    options: string[];
+    questionIndex: number;
+    correctOption: number;
+  }) => {
 
 const {
 gameState: { selectedOptions },

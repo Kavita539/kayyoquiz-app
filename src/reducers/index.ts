@@ -3,3 +3,13 @@ export {
     initialState
 }
 from "./authReducer";
+export {
+    quizReducer,
+    quizInitialState
+}
+from "./quizReducer";
+export {
+    gameReducer,
+    gameInitialState
+}
+from "./gameReducer";

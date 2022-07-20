@@ -5,7 +5,10 @@ export {
 from "./validFormChecker";
 export {
     createUserInfo,
-    getUserInfo
+    getUserInfo,
+    getCategories,
+    getQuizzes,
+    getQuiz
 }
 from "./firebaseHelpers";
 export {

@@ -28,6 +28,11 @@
 .banner-heading {
     word-spacing: 20px;
     font-size: 3rem;
+    margin: 0;
+}
+
+.banner-text {
+    padding: 0.5rem;
 }
 
 /*******/

@@ -40,7 +40,11 @@
     text-align: center;
     flex-direction: column;
     gap: var(--xs-space);
-    padding: var(--xs-space);
+    padding-top: 1.3rem;
+}
+
+.theme-toggle-btn-link {
+    padding-top: 1.3rem;
 }
 
 .theme-toggle-btn {
@@ -60,17 +64,8 @@
     transition: all 0.75s;
 }
 
-/* media-queries */
-@media only screen and (max-width: 1024px) {
-    .burger-menu-button {
-        display: block;
-    }
-
+@media only screen and (max-width: 550px){
+.nav-logo-title {
+    font-size: 1.2rem;
 }
-
-@media only screen and (max-width: 600px) {
-    .right-navbar .navlist-link-item {
-        display: none;
-    }
-
 }

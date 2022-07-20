@@ -11,6 +11,17 @@
     padding: var(--lg-space);
 }
 
+.result-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.result-option {
+    background-color: var(--option-bg-color);
+    border-radius: 5px;
+    padding: var(--md-space);
+}
+
 .answers {
     display: flex;
     flex-direction: column;
