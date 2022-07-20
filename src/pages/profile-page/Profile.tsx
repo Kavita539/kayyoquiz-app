@@ -32,6 +32,7 @@ console.log(err);
 })();
 }, [uid]);
 
+
 return (
 <div className="profile-wrapper">
     <Navbar />

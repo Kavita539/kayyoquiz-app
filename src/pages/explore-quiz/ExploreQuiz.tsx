@@ -20,8 +20,6 @@ const [quizData, setQuizData] = useState<DocumentData>();
     setQuizData(quizzes.filter((quiz: DocumentData) => quiz.quizCategory === quizId));
     }, [quizId, quizzes]);
 
-    console.log(quizId, "hello");
-    console.log(quizzes);
 
 
     return (

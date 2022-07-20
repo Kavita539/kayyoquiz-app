@@ -1,8 +1,23 @@
-.loader-container {
-    min-height: 8rem;
+.loader {
+    border: 10px solid var(--secondary-color);
+    border-top: 10px solid var(--primary-color);
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    animation: spin 0.75s linear infinite;
+}
+
+.loading-container {
+    min-height: 200px;
     z-index: 3;
 }
 
-.loader {
-    width: 5rem;
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
