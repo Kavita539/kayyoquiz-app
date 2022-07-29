@@ -15,7 +15,7 @@ const NavigationRoutes = () => {
         <Route path="/rules" element={<Rules />} />
         <Route path="/result" element={<Result />} />
         <Route path="/question" element={<QuestionPage />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile-logout" element={<Profile />} />
       </Route>
       {!isAuthenticated ? (
         <>

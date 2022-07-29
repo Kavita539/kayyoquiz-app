@@ -17,10 +17,10 @@ return(
         <button id="menu-icon-button" className="burger-menu-button navlist-link-item">
             <i className="fas fa-bars"></i>
         </button>
-        <a className="link-no-style" href="./">
+        <Link to="/" className="link-no-style">
             <div className="nav-logo-title"> <span className="text-xl custom-color">k</span>ayy<span
                     className="text-xl custom-color">O</span>quiz</div>
-        </a>
+        </Link>
     </div>
     <ul className="right-navbar">
         <li>
@@ -29,7 +29,7 @@ return(
         </li>
         <li>
             <Link
-              to={`${isAuthenticated ? "/profile" : "/sign-in"}`}
+              to={`${isAuthenticated ? "/profile-logout" : "/sign-in"}`}
               className="anchor-tag-badge-container"
               title={`${isAuthenticated ? "Profile" : "Login"}`}
             ><i className="fas fa-user "></i></Link>

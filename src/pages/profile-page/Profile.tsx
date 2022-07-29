@@ -1,13 +1,12 @@
 import "./profile.css";
 import { useEffect, useState } from "react";
 import { Footer, Loading, Navbar } from "../../components";
-import { getUserInfo } from "../../utils";
+import { getUserInfo} from "../../utils";
 import { useAuth } from "../../hooks";
 
 const Profile = () => {
 const [userData, setUserData] = useState({ firstName: "N", lastName: "A", email: "NA" });
 const [isLoading, setIsLoading] = useState(false);
-const { firstName, lastName, email } = userData;
 const {
 logout,
 authState: { uid },
@@ -37,32 +36,15 @@ return (
 <div className="profile-wrapper">
     <Navbar />
     <main className="profile-container flex-column">
-        <h2 className="text-center">User Profile</h2>
+        <h2 className="text-center">Logout Page</h2>
 
         {isLoading ? (
         <Loading />
         ) : (
         <div className="profile">
             <div className="profile-info flex-total-center flex-column">
-                <div className="avatar avatar-lg avatar-txt cursor-pointer flex-total-center" role="img"
-                    title={`${firstName} ${lastName}`}>
-                    {isLoading ? (
-                    <span className="text-sm">Loading...</span>
-                    ) : (
-                    <span>{firstName[0]?.toUpperCase() + lastName[0]?.toUpperCase()}</span>
-                    )}
-                </div>
-
-                <div className="details flex-total-center flex-column">
-                    <div className="info">
-                        <span className="text-bold">Name</span>
-                        <span>{`${firstName} ${lastName}`}</span>
-                    </div>
-
-                    <div className="info">
-                        <span className="text-bold">Email</span>
-                        <span>{email}</span>
-                    </div>
+                <div className="avatar avatar-lg cursor-pointer flex-total-center">
+                <img className="responsive-img round-img profile-img" src="https://avatars.dicebear.com/api/avataaars/qwerasxqergdsacssfghvsd.svg" alt="avatar-lg" />
                 </div>
                 <div className="profile-cta">
                     <button className="btn btn-primary block-btn" onClick={()=> logout()}>
@@ -70,7 +52,7 @@ return (
                     </button>
                 </div>
             </div>
-        </div>
+        </div> 
         )}
     </main>
 
