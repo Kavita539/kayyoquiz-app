@@ -1,5 +1,5 @@
 import { Route, Routes, Navigate } from "react-router-dom";
-import { Home, ExploreQuiz, Signup, Signin, Rules, Result, QuestionPage, Profile } from "../pages";
+import { Home, ExploreQuiz, Signup, Signin, Rules, Result, QuestionPage} from "../pages";
 import { useAuth } from "../hooks";
 import { PrivateRoutes } from "./PrivateRoutes";
 
@@ -15,7 +15,6 @@ const NavigationRoutes = () => {
         <Route path="/rules" element={<Rules />} />
         <Route path="/result" element={<Result />} />
         <Route path="/question" element={<QuestionPage />} />
-        <Route path="/profile-logout" element={<Profile />} />
       </Route>
       {!isAuthenticated ? (
         <>
